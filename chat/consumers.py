@@ -4,6 +4,7 @@ from channels.generic.websocket import WebsocketConsumer
 from .models import Message
 import datetime
 
+
 class ChatConsumer(WebsocketConsumer):
     def connect(self):
         self.roomGroupName = "group_chat_gfg"
@@ -48,4 +49,5 @@ class ChatConsumer(WebsocketConsumer):
         username = event["username"]
         is_writing_data = event["is_writing_data"]
         image = event["image"]
-        async_to_sync(self.send(text_data=json.dumps({"message": message, "username": username, "is_writing_data": is_writing_data, "image": image})))
+        async_to_sync(self.send(text_data=json.dumps(
+            {"message": message, "username": username, "is_writing_data": is_writing_data, "image": image})))

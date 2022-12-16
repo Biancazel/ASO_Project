@@ -12,3 +12,6 @@ media
 # If you are using PyCharm #
 # User-specific stuff
 .idea
+
+.env.prod
+.env.prod.db
